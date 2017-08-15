@@ -1,5 +1,6 @@
 package tianyangzhong.com.overdosed;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -68,7 +69,13 @@ public class MainActivity extends AppCompatActivity {
     public void startService(View view){
         String numberInput = mAlarmFreq.getText().toString();
         Toast.makeText(this, "the input is:"+ numberInput, Toast.LENGTH_LONG).show();
-
+        Intent intent = new Intent(MainActivity.this, ClockCheckService.class);
+        startService(intent);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        
+    }
 }
