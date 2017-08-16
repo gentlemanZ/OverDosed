@@ -60,6 +60,7 @@ public class ClockCheckService extends Service {
                 stopForeground(true);
             }
         });
+
         return Service.START_NOT_STICKY;
     }
 
